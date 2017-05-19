@@ -32,7 +32,7 @@
     <!-- use this style for testing and development purposes only -->
 
 
-   <!-- <style type="text/css">
+   <!--<style type="text/css">
         .container {
             border: 2px dotted green;
         }
@@ -66,7 +66,7 @@
         <!-- HOME BUTTON: REPLACE href="#" with your landing page url -->
         <a class="navbar-brand" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
             <!-- PUT BRAND LOGO / ICON HERE (instead of font-awesome -->
-            <img src="logo.PNG" style="width:30px">
+            <img src="Logo.PNG" style="width:30px">
         </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -235,14 +235,14 @@
                         <!--name-->
                         <div class="form-group">
                             <label for="name-id">Name</label>
-                            <input type="text" name="USERNAME" id="name-id" class="form-control">
+                            <input type="text" name="USERNAME" id="name-id" placeholder="Jose Garcia" class="form-control" required>
                         </div>
                         <!--end name-->
 
                         <!--email-->
                         <div class="form-group">
                             <label for="email-id">Email</label>
-                            <input type="email" name="EMAIL" id="email-id" class="form-control">
+                            <input type="email" name="EMAIL" id="email-id" placeholder="Jose@email.com" class="form-control" required >
                         </div>
                         <!--end email-->
 
@@ -262,22 +262,30 @@
                             <input type="radio" id="radio-id"  name="GENDER" value="other">
                                 other
                             </label>
+                            <label>
+                            <input type="radio" id="radio-id"  name="GENDER" value="not important" checked>
+                                not important
+                            </label>
                         </div>
                         <!--end radio-->
-                            
+                        <!--start checkbox-->
+                        <input type="checkbox" name="agree" id="agree-cb" onchange="updateDisplay()">
+                        <label for="agree-cb">I agree to be spammed once a month</label>
+                        <!--end checkbox-->
                         <!--button-->
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary">
-                        </div>
-
-                        <div class="alert alert-danger alert-dismissible fade in" hidden id="alert-id">
-                            <button type="button" class="close" id="close-id">
-                                <span>&times;</span>
-                            </button>
-  
-                            Thank you! I will get in touch.
+                            <button type="submit" class="btn btn-default my-btn form-control" id="submit-id" disabled>Submit</button>                   
+                            <div class="alert alert-danger alert-dismissible fade in" hidden id="alert-id">
+                                <button type="button" class="close" id="close-id"><span>&times;</span></button>
+                                Information Received!
+                            </div>
                         </div>
                         <!--end button-->
+                        <!--start footer-->
+                        <div class="panel-footer">
+                            <small id="message">"Please agree to the terms"</small>
+                        </div>
+                        <!--end footer-->
 
                 </div>
             </div>
@@ -289,11 +297,13 @@
                         col-md-6
                         col-lg-6
                         text-center">
-                <h2 class="text-primary wow pulse my-headers"><strong>Mark Twain <br> on Travel</strong></h2>
+                <h1 class="text-primary wow pulse my-headers"><strong>Mark Twain <br> on Travel</strong></h1>
+                <hr>
                 <div class="panel-body">
                      <p>Travel is fatal to prejudice, bigotry, and narrow-mindedness, and many of our people need it sorely on these accounts. Broad, wholesome, charitable views of men and things cannot be acquired by vegetating in one little corner of the earth all one's lifetime. 
                         <br><em>-Innocents Abroad</em></p>
                 </div>
+                <hr>
             </div>
              <!--end of col2 text-->
         </div>
@@ -433,6 +443,8 @@
     <script>
         new WOW().init();
     </script>
+    <script type="text/javascript" src="custom.js"></script>
 </body>
 
 </html>
+
